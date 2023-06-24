@@ -17,9 +17,6 @@ Route::get('/', function () {
     return view('controleEstoque.index');
 });
 
-Route::get('/teste', function () {
-    return view('controleEstoque.teste');
-});
 
 
 Auth::routes();

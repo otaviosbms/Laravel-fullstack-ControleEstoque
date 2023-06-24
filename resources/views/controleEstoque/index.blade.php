@@ -11,21 +11,20 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container justify-content-center ">
-          <span class="navbar-brand" href="#">Gerenciamento de Estoques</span>
+          <span class="navbar-brand" href="#">Gerenciamento de Estoque</span>
           <!-- Opções de navegação -->
         </div>
     </nav>
       
   
     <div class="container mt-4">
-      <h1>Gerenciamento de Estoques</h1>
       <hr>
   
       <!-- Conteúdo principal -->
       <div class="row">
         <div class="col-md-6">
           <!-- Formulário de adição de produtos -->
-          <h2>Adicionar Produto</h2>
+          <h2>Cadastrar Produto</h2>
           <form>
             <div class="form-group">
               <label for="nomeProduto">Nome do Produto:</label>
@@ -35,23 +34,35 @@
               <label for="quantidade">Quantidade:</label>
               <input type="number" class="form-control" id="quantidade" placeholder="Digite a quantidade">
             </div>
-            <button type="submit" class="btn btn-primary">Adicionar</button>
+            <div class="form-group">
+              <label for="quantidade">Validade:</label>
+              <input type="date" class="form-control" id="quantidade">
+            </div>
+            <div class="form-group">
+              <label for="quantidade">Valor:</label>
+              <input type="number" class="form-control" id="quantidade" placeholder="Digite o valor">
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Adicionar</button>
           </form>
         </div>
         <div class="col-md-6">
           <!-- Tabela de estoque -->
-          <h2>Estoque</h2>
+          <h2>Estoque Atual</h2>
           <table class="table">
             <thead>
               <tr>
                 <th>Produto</th>
                 <th>Quantidade</th>
+                <th>Validade</th>
+                <th>Valor</th>
                 <th>Ações</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>Produto 1</td>
+                <td>10</td>
+                <td>10</td>
                 <td>10</td>
                 <td>
                   <button class="btn btn-sm btn-info">Editar</button>
@@ -60,6 +71,8 @@
               </tr>
               <tr>
                 <td>Produto 2</td>
+                <td>5</td>
+                <td>5</td>
                 <td>5</td>
                 <td>
                   <button class="btn btn-sm btn-info">Editar</button>
