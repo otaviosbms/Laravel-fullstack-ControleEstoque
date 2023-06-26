@@ -11,12 +11,12 @@ class GerenciarEstoque extends Controller
     {
         $estoque = Estoque::all();
 
-        return view('gerenciarEstoque.index', compact('estoque'));
+        return view('Estoque.index', compact('estoque'));
     }
 
     public function create()
     {
-        return view('gerenciarEstoque.create');
+        return view('Estoque.create');
     }
 
     public function store(Request $request)
@@ -26,19 +26,19 @@ class GerenciarEstoque extends Controller
         $estoque->email = $request->input('email');
         $estoque->save();
 
-        return redirect()->route('gerenciarEstoque.index');
+        return redirect()->route('Estoque.index');
     }
 
     public function show($id)
     {
         $estoque = Estoque::find($id);
-        return view('gerenciarEstoque.show', compact('estoque'));
+        return view('Estoque.show', compact('estoque'));
     }
 
     public function edit($id)
     {
         $estoque = Estoque::find($id);
-        return view('gerenciarEstoque.edit', compact('estoque'));
+        return view('Estoque.edit', compact('estoque'));
     }
 
     public function update(Request $request, $id)
@@ -48,7 +48,7 @@ class GerenciarEstoque extends Controller
         $estoque->email = $request->input('email');
         $estoque->save();
 
-        return redirect()->route('gerenciarEstoque.index');
+        return redirect()->route('Estoque.index');
     }
 
     public function destroy($id)
@@ -56,6 +56,6 @@ class GerenciarEstoque extends Controller
         $estoque = Estoque::find($id);
         $estoque->delete();
 
-        return redirect()->route('gerenciarEstoque.index');
+        return redirect()->route('Estoque.index');
     }
 }

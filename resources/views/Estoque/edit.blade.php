@@ -1,6 +1,6 @@
 <h1>Editar Exemplo</h1>
 
-<form action="{{ route('gerenciarEstoque.update', $estoque->id) }}" method="POST">
+<form action="{{ route('Estoque.update', $estoque->id) }}" method="POST">
     @csrf
     @method('PUT')
 
