@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('estoques', function (Blueprint $table) {
             $table->id();
-            $table->string('nome',128)->unique();
+            $table->string('nome');
             $table->integer('quantidade');
             $table->date('validade');
-            $table->float('valor');
+            $table->decimal('valor',10,2); //formata a forma com que o banco de dados cadastra o valor
             $table->timestamps();
         });
 
