@@ -62,4 +62,6 @@ class GerenciarEstoque extends Controller
         
         return redirect()->route('estoque.index');
     }
+
+
 }

@@ -5,66 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    @vite(['resources/js/app.js'])
+
+    <!-- Adicione os links CSS do Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
+
+    <div class="container">
+        <h1 class="mt-4">Estoque Atual</h1>
+        <a href="{{ route('estoque.create') }}" class="btn btn-primary mb-3">Novo Produto</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome:</th>
+                    <th>Quantidade:</th>
+                    <th>Validade:</th>
+                    <th>Valor:</th>
+                    <th>Ações:</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($estoque as $estoques)
+                <tr>
+                    <td>{{ $estoques->nome }}</td>
+                    <td>{{ $estoques->quantidade }}</td>
+                    <td>{{ $estoques->validade }}</td>
+                    <td>R$ {{ $estoques->valor }}</td>
     
-
-
-
-
-
-
-
-    <h1>Estoque Atual</h1>
-    <a href="{{ route('estoque.create') }}"><button>Novo Produto</button></a>
-    <table>
-        <thead>
-            <tr>
-                <th>ID:</th>
-                <th>Nome:</th>
-                <th>Quantidade:</th>
-                <th>Validade:</th>
-                <th>Valor:</th>
-                <th>Ações:</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($estoque as $estoques)
-            <tr>
-                <td>{{ $estoques->id }}</td>
-                <td>{{ $estoques->nome }}</td>
-                <td>{{ $estoques->quantidade }}</td>
-                <td>{{ $estoques->validade }}</td>
-                <td>{{ $estoques->valor }}</td>
+                    <td>
+                        <a href="{{ route('estoque.show', $estoques->id) }}" class="btn btn-primary">Ver</a>
+                        <a href="{{ route('estoque.edit', $estoques->id) }}" class="btn btn-secondary">Editar</a>
     
-                
-                <td>
-    
-                   <a href="{{ route('estoque.show', $estoques->id) }}"><button>Ver</button></a>
-                    <a href="{{ route('estoque.edit', $estoques->id) }}"><button>Editar</button></a>
-    
-                    <form action="{{ route('estoque.destroy', $estoques->id) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit">Excluir</button>
-                    </form>
-    
-                </td>
-    
-            </tr>
-            @endforeach
-    
-        </tbody>
-    </table>
-    
+                        <form action="{{ route('estoque.destroy', $estoques->id) }}" method="POST" class="d-inline">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 
-
-
-
-
-
-
-
+    <!-- Adicione os scripts JavaScript do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 
