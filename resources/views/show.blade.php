@@ -7,8 +7,7 @@
     <title>Document</title>
     @vite(['resources/js/app.js'])
 
-    <!-- Adicione os links CSS do Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
 </head>
 <body>
 
@@ -16,7 +15,7 @@
         <h1 class="mt-4">Detalhes do Produto</h1>
         <p>ID: {{ $estoque->id }}</p>
         <p>Nome: {{ $estoque->nome }}</p>
-        <p>Quantidade: {{ $estoque->quantidade }}</p>
+        <p>Quantidade: {{ $estoque->quantidade }} Unidades</p>
         <p>Validade: {{ $estoque->validade }}</p>
         <p>Valor: R${{ $estoque->valor }}</p>
         <p>Data de cadastro: {{ $estoque->created_at }}</p>
@@ -31,8 +30,7 @@
         </form>
     </div>
 
-    <!-- Adicione os scripts JavaScript do Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
 

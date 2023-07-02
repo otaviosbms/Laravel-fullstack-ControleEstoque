@@ -7,8 +7,7 @@
     <title>Document</title>
     @vite(['resources/js/app.js'])
 
-    <!-- Adicione os links CSS do Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
 </head>
 <body>
 
@@ -29,7 +28,7 @@
                 @foreach ($estoque as $estoques)
                 <tr>
                     <td>{{ $estoques->nome }}</td>
-                    <td>{{ $estoques->quantidade }}</td>
+                    <td>{{ $estoques->quantidade }} Unidades</td>
                     <td>{{ $estoques->validade }}</td>
                     <td>R$ {{ $estoques->valor }}</td>
     
@@ -49,8 +48,7 @@
         </table>
     </div>
 
-    <!-- Adicione os scripts JavaScript do Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
 

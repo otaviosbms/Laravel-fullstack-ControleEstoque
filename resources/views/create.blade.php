@@ -7,8 +7,7 @@
     <title>Create</title>
     @vite(['resources/js/app.js'])
 
-    <!-- Adicione os links CSS do Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
 </head>
 <body>
 
@@ -18,7 +17,7 @@
             @csrf
             <div class="mb-3">
                 <label for="nome" class="form-label">Nome:</label>
-                <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome">
+                <input type="text" autofocus name="nome" id="nome" class="form-control" placeholder="Nome">
             </div>
 
             <div class="mb-3">
@@ -40,7 +39,6 @@
         </form>
     </div>
 
-    <!-- Adicione os scripts JavaScript do Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
