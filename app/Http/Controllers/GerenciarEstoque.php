@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EstoqueFormResquest;
 use App\Models\Estoque;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class GerenciarEstoque extends Controller
 {
@@ -19,8 +21,11 @@ class GerenciarEstoque extends Controller
         return view('create');
     }
 
-    public function store(Request $request)
+    public function store(EstoqueFormResquest $request)
     {
+
+        Session::flash('mensagem', 'Item Adicionado com sucesso');
+
         $estoque = new Estoque();
         $estoque->nome = $request->input('nome');
         $estoque->quantidade = $request->input('quantidade');
@@ -43,8 +48,11 @@ class GerenciarEstoque extends Controller
         return view('edit', compact('estoque'));
     }
 
-    public function update(Request $request, $id)
+    public function update(EstoqueFormResquest $request, $id)
     {
+
+        Session::flash('mensagem', 'Item Atualizado com sucesso');
+
         $estoque = Estoque::find($id);
         $estoque->nome = $request->input('nome');
         $estoque->quantidade = $request->input('quantidade');
@@ -59,6 +67,10 @@ class GerenciarEstoque extends Controller
     {
         $estoque = Estoque::find($id);
         $estoque->delete();
+
+        // Armazene a mensagem de notificação na sessão
+        Session::flash('mensagem', 'Item excluído com sucesso');
+
         
         return redirect()->route('estoque.index');
     }

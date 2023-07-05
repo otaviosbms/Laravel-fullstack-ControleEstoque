@@ -4,15 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Controle do Estoque</title>
     @vite(['resources/js/app.js'])
 
 
 </head>
 <body>
 
+
+
     <div class="container">
         <h1 class="mt-4">Estoque Atual</h1>
+
+        @if(Session::has('mensagem'))
+        <div class="alert alert-success">
+            {{ Session::get('mensagem') }}
+        </div>
+        @endif
+
         <a href="{{ route('estoque.create') }}" class="btn btn-primary mb-3">Novo Produto</a>
         <table class="table">
             <thead>
