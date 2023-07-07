@@ -13,12 +13,12 @@ class GerenciarEstoque extends Controller
     {
         $estoque = Estoque::query()->orderBy('nome')->get();
 
-        return view('index', compact('estoque'));
+        return view('estoque.index', compact('estoque'));
     }
 
     public function create()
     {
-        return view('create');
+        return view('estoque.create');
     }
 
     public function store(EstoqueFormResquest $request)
@@ -39,13 +39,13 @@ class GerenciarEstoque extends Controller
     public function show($id)
     {
         $estoque = Estoque::find($id);
-        return view('show', compact('estoque'));
+        return view('estoque.show', compact('estoque'));
     }
 
     public function edit($id)
     {
         $estoque = Estoque::find($id);
-        return view('edit', compact('estoque'));
+        return view('estoque.edit', compact('estoque'));
     }
 
     public function update(EstoqueFormResquest $request, $id)
