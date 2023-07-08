@@ -1,4 +1,4 @@
-<x-layout title="Séries">
+<x-layout title="Estoque">
 
 
     <div class="container text-center">

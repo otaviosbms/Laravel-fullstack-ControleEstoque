@@ -11,15 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('estoques', function (Blueprint $table) {
+        Schema::create('entradas', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->integer('quantidade');
-            $table->date('validade');
-            $table->decimal('valor',10,2); //formata a forma com que o banco de dados cadastra o valor
             $table->timestamps();
         });
-
     }
 
     /**
@@ -27,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('estoques');
+        Schema::dropIfExists('entradas');
     }
 };

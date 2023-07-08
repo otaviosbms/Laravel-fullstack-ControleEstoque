@@ -1,4 +1,4 @@
-<x-layout title="Séries">
+<x-layout title="Editar">
 
     <div class="container text-center">
         <h1 class="mb-5">Editar Produto</h1>

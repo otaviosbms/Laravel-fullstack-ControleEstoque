@@ -1,5 +1,5 @@
 
-<x-layout title="Séries">
+<x-layout title="Criar">
 
     <div class="container text-center">
 
