@@ -15,25 +15,23 @@
             <thead>
                 <tr>
                     <th>Nome:</th>
-                    <th>Quantidade:</th>
+                    {{-- <th>Quantidade:</th> --}}
                     <th>Validade:</th>
                     <th>Valor:</th>
                     <th>Ações:</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($estoque as $estoques)
+                @foreach ($estoque as $estoque)
                 <tr>
-                    <td>{{ $estoques->nome }}</td>
-                    <td>{{ $estoques->quantidade }} Unidades</td>
-                    <td>{{ $estoques->validade }}</td>
-                    <td>R$ {{ $estoques->valor }}</td>
-    
+                    <td>{{ $estoque->nome }}</td>
+                    {{-- <td>{{ $estoque->quantidade }} Unidades</td> --}}
+                    <td>{{ $estoque->validade }}</td>
+                    <td>R$ {{ $estoque->valor }}</td>
                     <td>
-                        <a href="{{ route('estoque.show', $estoques->id) }}" class="btn btn-primary">Ver</a>
-                        <a href="{{ route('estoque.edit', $estoques->id) }}" class="btn btn-secondary">Editar</a>
-    
-                        <form action="{{ route('estoque.destroy', $estoques->id) }}" method="POST" class="d-inline">
+                        <a href="{{ route('estoque.show', $estoque->id) }}" class="btn btn-primary">Ver</a>
+                        <a href="{{ route('estoque.edit', $estoque->id) }}" class="btn btn-secondary">Editar</a>
+                        <form action="{{ route('estoque.destroy', $estoque->id) }}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Excluir</button>
@@ -43,6 +41,7 @@
                 @endforeach
             </tbody>
         </table>
+        
     </div>
 
 

@@ -9,7 +9,7 @@
   @vite(['resources/js/app.js'])
   <style>
     .custom-navbar {
-      height: 80px; /* Defina a altura desejada */
+      height: 100px; /* Defina a altura desejada */
     }
   </style>
 </head>
@@ -23,7 +23,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Cadastro</a>
+            <a class="nav-link" href="{{ route('estoque.index')}}">Cadastro</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Saldo</a>
