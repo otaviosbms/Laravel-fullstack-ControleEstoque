@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\GerenciarEstoque;
+use App\Http\Controllers\EstoqueController;
+use App\Http\Controllers\EntradaController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +17,8 @@ use App\Http\Controllers\GerenciarEstoque;
 */
 
 
-    Route::resource('estoque', GerenciarEstoque::class);
+    Route::resource('estoque', EstoqueController::class);
+
+    Route::resource('entrada', EntradaController::class);
+
+

@@ -2,7 +2,7 @@
 
 
     <div class="container text-center">
-        <h1 class="mb-3">Estoque Atual</h1>
+        <h1 class="mb-3">Cadastro de Produtos</h1>
 
         @if(Session::has('mensagem'))
         <div class="alert alert-success">

@@ -7,7 +7,7 @@ use App\Models\Produto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
-class GerenciarEstoque extends Controller
+class EstoqueController extends Controller
 {
     public function index()
     {
@@ -28,7 +28,7 @@ class GerenciarEstoque extends Controller
 
         $estoque = new Produto();
         $estoque->nome = $request->input('nome');
-        $estoque->quantidade = $request->input('quantidade');
+        // $estoque->quantidade = $request->input('quantidade');
         $estoque->validade = $request->input('validade');
         $estoque->valor = $request->input('valor');
         $estoque->save();

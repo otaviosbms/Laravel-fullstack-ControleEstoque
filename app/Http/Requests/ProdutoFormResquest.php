@@ -23,7 +23,7 @@ class ProdutoFormResquest extends FormRequest
     {
         return [
             'nome' => ['required', 'min:3'],
-            'quantidade' => ['required'],
+            // 'quantidade' => ['required'],
             'validade' => ['required'],
             'valor' => ['required']
         ];
