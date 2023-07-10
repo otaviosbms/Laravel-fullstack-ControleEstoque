@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('produtos', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->integer('quantidade');
+            $table->integer('quantidade')->default(0);
             $table->date('validade');
             $table->decimal('valor',10,2); //formata a forma com que o banco de dados cadastra o valor
             $table->timestamps();
