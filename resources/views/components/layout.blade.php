@@ -29,10 +29,10 @@
             <a class="nav-link" href="#">Saldo</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Entradas</a>
+            <a class="nav-link" href="{{ route('entrada.index') }}">Entradas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Saídas</a>
+            <a class="nav-link" href="{{ route('saida.index') }}">Saídas</a>
           </li>
         </ul>
         <ul class="navbar-nav">

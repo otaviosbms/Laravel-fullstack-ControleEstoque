@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EstoqueController;
 use App\Http\Controllers\EntradaController;
-
+use App\Http\Controllers\SaidaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +20,7 @@ use App\Http\Controllers\EntradaController;
     Route::resource('estoque', EstoqueController::class);
 
     Route::resource('entrada', EntradaController::class);
+
+    Route::resource('saida', SaidaController::class);
 
 

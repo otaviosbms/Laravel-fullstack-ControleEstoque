@@ -10,18 +10,25 @@ use App\Models\Produto;
 class EntradaController extends Controller
 {
 
-
-    public function store(Request $request)
+    public function index()
     {
-        $entrada = Entrada::create($request->quantidade());
-
-        $produto = New Entrada();
-        // Atualizar a quantidade do produto
-        $produto = Produto::find($entrada->produto_id);
-        $produto->quantidade += $entrada->quantidade;
-        $produto->save();
-
-        return redirect()->route('entradas.show', $entrada->id);
+        dd(Entrada::all()->pluck('quantidade'));
+        $produtos = Produto::all();
+        return view('entrada.index', compact('produtos'));
     }
 
-}
+
+    // public function store(Request $request)
+    // {
+    //     $entrada = Entrada::create($request->quantidade());
+
+    //     $produto = New Entrada();
+    //     // Atualizar a quantidade do produto
+    //     $produto = Produto::find($entrada->produto_id);
+    //     $produto->quantidade += $entrada->quantidade;
+    //     $produto->save();
+
+    //     return redirect()->route('entradas.show', $entrada->id);
+    // }
+
+};

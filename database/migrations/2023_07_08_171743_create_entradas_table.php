@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('entradas', function (Blueprint $table) {
             $table->id();
+            $table->integer('quantidade');
+            $table->bigInteger('entrada_FkProdutoId');
+            $table->foreign('entrada_FkProdutoId')->references('id')->on('produtos');
             $table->timestamps();
         });
     }

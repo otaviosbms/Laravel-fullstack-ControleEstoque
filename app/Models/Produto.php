@@ -11,12 +11,12 @@ class Produto extends Model
 
     public function entrada()
     {
-        return $this->hasMany(Entrada::class);
+        return $this->hasMany(Entrada::class, 'entrada_FkProdutoId', 'id');
     }
 
     public function saida()
     {
-        return $this->hasMany(Saida::class);
+        return $this->hasMany(Saida::class, 'saida_FkProdutoId', 'id');
     }
 
 }

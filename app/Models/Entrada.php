@@ -11,7 +11,7 @@ class Entrada extends Model
 
     public function produto()
     {
-        return $this->belongsTo(Produto::class);
+        return $this->belongsTo(Produto::class, 'entrada_FkProdutoId', 'id');
     }
 
 }
