@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EstoqueController;
 use App\Http\Controllers\EntradaController;
 use App\Http\Controllers\SaidaController;
+use App\Http\Controllers\SaldoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +24,4 @@ use App\Http\Controllers\SaidaController;
 
     Route::resource('saida', SaidaController::class);
 
-
+    Route::resource('saldo', SaldoController::class);

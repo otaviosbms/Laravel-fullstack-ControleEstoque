@@ -54,7 +54,7 @@ class EstoqueController extends Controller
 
         $estoque = Produto::find($id);
         $estoque->nome = $request->input('nome');
-        $estoque->quantidade = $request->input('quantidade');
+        // $estoque->quantidade = $request->input('quantidade');
         $estoque->validade = $request->input('validade');
         $estoque->valor = $request->input('valor');
         $estoque->save();

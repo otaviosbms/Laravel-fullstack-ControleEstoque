@@ -12,8 +12,9 @@ class SaidaController extends Controller
     
     public function index()
     {
-        dd(Saida::all()->pluck('quantidade'));
-        $produtos = Produto::all();
+        $produto = Produto::findOrFail(1);
+        dd($quantidade = $produto->saida()->pluck('quantidade'));
+
         return view('saida.index', compact('produtos'));
     }
 

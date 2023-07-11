@@ -26,7 +26,7 @@
             <a class="nav-link" href="{{ route('estoque.index')}}">Cadastro</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Saldo</a>
+            <a class="nav-link" href="{{ route('saldo.index') }}">Saldo</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ route('entrada.index') }}">Entradas</a>
@@ -37,7 +37,7 @@
         </ul>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">Usuário</a>
+            <a class="nav-link" href="https://github.com/otaviosbms" target="_blank">Usuário</a>
           </li>
         </ul>
       </div>

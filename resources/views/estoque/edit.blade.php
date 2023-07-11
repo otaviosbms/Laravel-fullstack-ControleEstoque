@@ -22,10 +22,10 @@
                 <input type="text" autofocus name="nome" id="nome" class="form-control" value="{{ $estoque->nome }}">
             </div>
 
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label for="quantidade" class="form-label">Quantidade:</label>
                 <input type="number" name="quantidade" id="quantidade" class="form-control" value="{{ $estoque->quantidade }}">
-            </div>
+            </div> --}}
 
             <div class="mb-3">
                 <label for="validade" class="form-label">Validade:</label>

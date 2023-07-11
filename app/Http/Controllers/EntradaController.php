@@ -12,8 +12,9 @@ class EntradaController extends Controller
 
     public function index()
     {
-        dd(Entrada::all()->pluck('quantidade'));
-        $produtos = Produto::all();
+        $produto = Produto::findOrFail(1);
+        dd($quantidade = $produto->entrada()->pluck('quantidade'));
+
         return view('entrada.index', compact('produtos'));
     }
 
