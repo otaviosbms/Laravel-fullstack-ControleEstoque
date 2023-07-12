@@ -9,15 +9,18 @@ use App\Models\Produto;
 
 class SaidaController extends Controller
 {
-    
     public function index()
     {
-        $produto = Produto::findOrFail(1);
-        dd($quantidade = $produto->saida()->pluck('quantidade'));
+        $produtos = Produto::all();
+        $saidas = [];
 
-        return view('saida.index', compact('produtos'));
+        foreach ($produtos as $produto) {
+            $quantidades = $produto->saida()->pluck('quantidade');
+            $saidas[$produto->id] = $quantidades;
+        }
+
+        return view('saida.index', compact('produtos', 'saidas', 'quantidades'));
     }
-
 
     // public function store(Request $request)
     // {

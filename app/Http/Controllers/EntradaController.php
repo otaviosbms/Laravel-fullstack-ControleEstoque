@@ -12,10 +12,15 @@ class EntradaController extends Controller
 
     public function index()
     {
-        $produto = Produto::findOrFail(1);
-        dd($quantidade = $produto->entrada()->pluck('quantidade'));
+        $produtos = Produto::all();
+        $entradas = [];
 
-        return view('entrada.index', compact('produtos'));
+        foreach ($produtos as $produto) {
+            $quantidades = $produto->entrada()->pluck('quantidade');
+            $entradas[$produto->id] = $quantidades;
+        }
+
+        return view('entrada.index', compact('produtos', 'entradas', 'quantidades'));
     }
 
 
