@@ -10,7 +10,7 @@
                 <tr>
                     <th>Nome:</th>
                     <th>Valor:</th>
-                    <th>Utimas Saidas:</th>
+                    <th>Utimas Saidas:<br>(valores e data de entrada)</th>
                     <th>Ações:</th>
                 </tr>
             </thead>
@@ -21,16 +21,22 @@
                     <td>R$ {{ $produto->valor }}</td>
                     <td>          
                         @if (isset($saidas[$produto->id]) && $saidas[$produto->id]->isNotEmpty())          
-                        @foreach ($saidas[$produto->id] as $quantidade)
-                        {{ $quantidade }},
+                        @foreach ($saidas[$produto->id]->reverse()->take(4) as $quantidade)
+                        <li>{{ $quantidade }} produtos </li>
                         @endforeach
                         @else
-                        <p>Nenhuma Saida registrada para este produto.</p>
+                        <p>Nenhuma entrada registrada para este produto.</p>
                         @endif
                     </td>
 
                     <td>
-                        <a href="{{ route('estoque.create') }}" class="btn btn-primary">Criar Saida</a>
+                        <form action="{{ route('saida.store', $produto->id) }}" method="POST">
+                            @csrf
+                            <input type="number" autofocus name="quantidade" id="quantidade" class="form-control form-control-sm" placeholder="Quantidade" value="{{ old('quantidade') }}">
+
+                            <button type='submit' class="btn btn-primary">Criar Saida</a>
+
+                        </form>                   
                     </td>
 
                 </tr>

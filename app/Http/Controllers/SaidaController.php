@@ -19,20 +19,20 @@ class SaidaController extends Controller
             $saidas[$produto->id] = $quantidades;
         }
 
-        return view('saida.index', compact('produtos', 'saidas', 'quantidades'));
+        return view('saida.index', compact('produtos', 'saidas'));
     }
 
-    // public function store(Request $request)
-    // {
-    //     $saida = Saida::create($request->all());
+    public function store(Request $request, $id)
+    {
 
-    //     // Atualizar a quantidade do produto
-    //     $produto = Produto::find($saida->produto_id);
-    //     $produto->quantidade -= $saida->quantidade;
-    //     $produto->save();
+        $saida = new Saida();   
 
-    //     return redirect()->route('saidas.show', $saida->id);
-    // }
+        $saida->quantidade = $request->input('quantidade');
+        $saida->saida_FkProdutoId = $id;
+        $saida->save();
+
+        return redirect()->route('saida.index');
+    }
 
 
 }

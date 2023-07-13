@@ -16,25 +16,25 @@ class EntradaController extends Controller
         $entradas = [];
 
         foreach ($produtos as $produto) {
-            $quantidades = $produto->entrada()->pluck('quantidade');
-            $entradas[$produto->id] = $quantidades;
+            $quantidade = $produto->entrada()->pluck('quantidade');
+            $entradas[$produto->id] = $quantidade;
         }
 
-        return view('entrada.index', compact('produtos', 'entradas', 'quantidades'));
+        return view('entrada.index', compact('produtos', 'entradas'));
     }
 
+    
+    public function store(Request $request, $id)
+    {
 
-    // public function store(Request $request)
-    // {
-    //     $entrada = Entrada::create($request->quantidade());
 
-    //     $produto = New Entrada();
-    //     // Atualizar a quantidade do produto
-    //     $produto = Produto::find($entrada->produto_id);
-    //     $produto->quantidade += $entrada->quantidade;
-    //     $produto->save();
+        $entrada = new Entrada();   
 
-    //     return redirect()->route('entradas.show', $entrada->id);
-    // }
+        $entrada->quantidade = $request->input('quantidade');
+        $entrada->entrada_FkProdutoId = $id;
+        $entrada->save();
+
+        return redirect()->route('entrada.index');
+    }
 
 };

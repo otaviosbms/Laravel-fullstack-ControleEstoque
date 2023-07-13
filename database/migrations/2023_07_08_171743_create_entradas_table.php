@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->integer('quantidade');
             $table->bigInteger('entrada_FkProdutoId');
-            $table->foreign('entrada_FkProdutoId')->references('id')->on('produtos')->onDelete('cascade');;
             $table->timestamps();
+            $table->foreign('entrada_FkProdutoId')->references('id')->on('produtos')->onDelete('cascade');
         });
     }
 

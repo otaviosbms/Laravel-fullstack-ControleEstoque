@@ -17,11 +17,16 @@ use App\Http\Controllers\SaldoController;
 |
 */
 
-
+    // Estoque:
     Route::resource('estoque', EstoqueController::class);
 
-    Route::resource('entrada', EntradaController::class);
+    // Sntradas:
+    Route::get('entrada', [EntradaController::class,'index'])->name('entrada.index');
+    Route::post('entrada/{id}/store', [EntradaController::class, 'store'])->name('entrada.store');
 
-    Route::resource('saida', SaidaController::class);
+    // Saidas:
+    Route::get('saida', [SaidaController::class,'index'])->name('saida.index');
+    Route::post('saida/{id}/store', [SaidaController::class, 'store'])->name('saida.store');
 
+    // Saldo:
     Route::resource('saldo', SaldoController::class);

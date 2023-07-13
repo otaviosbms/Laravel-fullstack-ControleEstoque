@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProdutoFormResquest;
+use App\Http\Requests\ProdutoFormRequest;
 use App\Models\Produto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -21,7 +21,7 @@ class EstoqueController extends Controller
         return view('estoque.create');
     }
 
-    public function store(ProdutoFormResquest $request)
+    public function store(ProdutoFormRequest $request)
     {
 
         Session::flash('mensagem', 'Item Adicionado com sucesso');
@@ -47,7 +47,7 @@ class EstoqueController extends Controller
         return view('estoque.edit', compact('estoque'));
     }
 
-    public function update(ProdutoFormResquest $request, $id)
+    public function update(ProdutoFormRequest $request, $id)
     {
 
         Session::flash('mensagem', 'Item Atualizado com sucesso');
