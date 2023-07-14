@@ -20,9 +20,10 @@ use App\Http\Controllers\SaldoController;
     // Estoque:
     Route::resource('estoque', EstoqueController::class);
 
-    // Sntradas:
+    // Entradas:
     Route::get('entrada', [EntradaController::class,'index'])->name('entrada.index');
     Route::post('entrada/{id}/store', [EntradaController::class, 'store'])->name('entrada.store');
+    Route::get('entrada/{id}/show', [EntradaController::class, 'show'])->name('entrada.show');
 
     // Saidas:
     Route::get('saida', [SaidaController::class,'index'])->name('saida.index');

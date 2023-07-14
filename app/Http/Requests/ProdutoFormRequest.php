@@ -24,7 +24,7 @@ class ProdutoFormRequest extends FormRequest
         return [
             'nome' => ['required', 'min:3'],
             // 'quantidade' => ['required'],
-            'validade' => ['required'],
+            // 'validade' => ['required'],
             'valor' => ['required']
         ];
     }
@@ -34,8 +34,8 @@ class ProdutoFormRequest extends FormRequest
         return [
             'nome.required' => 'O campo nome é obrigatório',
             'nome.min' => 'O campo nome precisa de no minimo :min caracteres',
-            'quantidade.required' => 'O campo quantidade é obrigatório',
-            'validade.required' => 'O campo validade é obrigatório',
+            // 'quantidade.required' => 'O campo quantidade é obrigatório',
+            // 'validade.required' => 'O campo validade é obrigatório',
             'valor.required' => 'O campo valor é obrigatório'
         ];
     }

@@ -23,17 +23,21 @@ class EstoqueController extends Controller
 
     public function store(ProdutoFormRequest $request)
     {
-
-        Session::flash('mensagem', 'Item Adicionado com sucesso');
-
+        Session::flash('mensagem', 'Item adicionado com sucesso');
+    
         $estoque = new Produto();
         $estoque->nome = $request->input('nome');
-        $estoque->validade = $request->input('validade');
+    
+        if ($request->filled('validade')) {
+            $estoque->validade = $request->input('validade');
+        }
+    
         $estoque->valor = $request->input('valor');
         $estoque->save();
-
+    
         return redirect()->route('estoque.index');
     }
+    
 
     public function show($id)
     {

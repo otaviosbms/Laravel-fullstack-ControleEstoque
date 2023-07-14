@@ -28,7 +28,7 @@
             </div> --}}
 
             <div class="mb-3">
-                <label for="validade" class="form-label">Validade:</label>
+                <label for="validade" class="form-label">Validade:<br>(Não obrigatório)</label>
                 <input type="date" name="validade" id="validade" class="form-control" value="{{ $estoque->validade }}">
             </div>
 

@@ -29,7 +29,7 @@
                     <td>{{ $estoque->validade }}</td>
                     <td>R$ {{ $estoque->valor }}</td>
                     <td>
-                        <a href="{{ route('estoque.show', $estoque->id) }}" class="btn btn-primary">Ver</a>
+                        <a href="{{ route('estoque.show', $estoque->id) }}" class="btn btn-primary">Detalhes</a>
                     </td>
                 </tr>
                 @endforeach

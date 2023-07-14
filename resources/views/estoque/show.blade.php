@@ -10,7 +10,7 @@
         <p>Validade: {{ $estoque->validade }}</p>
         <p>Valor: R${{ $estoque->valor }}</p>
         <p>Data de cadastro: {{ $estoque->created_at }}</p>
-        <p>Data de atualização: {{ $estoque->updated_at }}</p>
+        <p>Data de ultima atualização: {{ $estoque->updated_at }}</p>
 
         <a href="{{ route('estoque.edit', $estoque->id) }}" class="btn btn-primary">Editar</a>
 
