@@ -15,7 +15,7 @@
         </div>
         @endif
 
-        <form action="{{ route('estoque.store') }}" method="POST">
+        <form action="{{ route('cadastro.store') }}" method="POST">
             @csrf
             <div class="mb-3">
                 <label for="nome" class="form-label">Nome:</label>
@@ -37,8 +37,13 @@
                 <input type="number" name="valor" id="valor" class="form-control" placeholder="Valor" value="{{ old('valor') }}">
             </div>
 
+            <div class="mb-3">
+                <label for="validade" class="form-label">Descrição:<br>(Não obrigatório)</label>
+                <input type="text" name="descricao" id="descricao" class="form-control" value="{{ old('descricao') }}">
+            </div>
+
             <button type="submit" class="btn btn-primary">Salvar</button>
-            <a href="{{ route('estoque.index') }}" class="btn btn-secondary">Cancelar</a>
+            <a href="{{ route('cadastro.index') }}" class="btn btn-secondary">Cancelar</a>
         </form>
 
 

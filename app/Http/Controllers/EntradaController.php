@@ -17,6 +17,7 @@ class EntradaController extends Controller
         $produtos = Produto::all();
         $entradas = [];
 
+
         foreach ($produtos as $produto) {
             $quantidade = $produto->entrada()->pluck('quantidade');
             $entradas[$produto->id] = $quantidade;

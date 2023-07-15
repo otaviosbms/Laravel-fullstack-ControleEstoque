@@ -23,7 +23,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('estoque.index')}}">Cadastro</a>
+            <a class="nav-link" href="{{ route('cadastro.index')}}">Cadastro</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ route('saldo.index') }}">Saldo</a>

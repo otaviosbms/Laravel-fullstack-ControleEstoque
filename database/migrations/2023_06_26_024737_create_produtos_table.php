@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('quantidade')->default(0);
             $table->date('validade')->nullable();
             $table->decimal('valor',10,2); //formata a forma com que o banco de dados cadastra o valor
+            $table->string('descricao')->nullable();
             $table->timestamps();
         });
 

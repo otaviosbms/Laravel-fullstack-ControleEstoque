@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\EstoqueController;
+use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\EntradaController;
 use App\Http\Controllers\SaidaController;
 use App\Http\Controllers\SaldoController;
@@ -17,8 +17,8 @@ use App\Http\Controllers\SaldoController;
 |
 */
 
-    // Estoque:
-    Route::resource('estoque', EstoqueController::class);
+    // Cadastro:
+    Route::resource('cadastro', CadastroController::class);
 
     // Entradas:
     Route::get('entrada', [EntradaController::class,'index'])->name('entrada.index');
@@ -30,4 +30,4 @@ use App\Http\Controllers\SaldoController;
     Route::post('saida/{id}/store', [SaidaController::class, 'store'])->name('saida.store');
 
     // Saldo:
-    Route::resource('saldo', SaldoController::class);
+    Route::get('saldo', [SaldoController::class,'index'])->name('saldo.index');

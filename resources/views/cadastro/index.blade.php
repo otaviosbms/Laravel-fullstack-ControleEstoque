@@ -10,7 +10,7 @@
         </div>
         @endif
 
-        <a href="{{ route('estoque.create') }}" class="btn btn-primary mb-5">Novo Produto</a>
+        <a href="{{ route('cadastro.create') }}" class="btn btn-primary mb-5">Novo Produto</a>
         <table class="table">
             <thead>
                 <tr>
@@ -22,15 +22,15 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($estoque as $estoque)
+                @foreach ($cadastro as $cadastro)
                 <tr>
-                    <td>{{ $estoque->nome }}</td>
-                    {{-- <td>{{ $estoque->quantidade }} Unidades</td> --}}
-                    <td>{{ $estoque->validade }}</td>
-                    <td>R$ {{ $estoque->valor }}</td>
+                    <td>{{ $cadastro->nome }}</td>
+                    {{-- <td>{{ $cadastro->quantidade }} Unidades</td> --}}
+                    <td>{{ $cadastro->validade }}</td>
+                    <td>R$ {{ $cadastro->valor }}</td>
                     <td>
-                        <a href="{{ route('estoque.edit', $estoque->id) }}" class="btn btn-secondary">Editar</a>
-                        <form action="{{ route('estoque.destroy', $estoque->id) }}" method="POST" class="d-inline">
+                        <a href="{{ route('cadastro.edit', $cadastro->id) }}" class="btn btn-secondary">Editar</a>
+                        <form action="{{ route('cadastro.destroy', $cadastro->id) }}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Excluir</button>
