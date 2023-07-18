@@ -22,7 +22,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($cadastro as $cadastro)
+                @foreach ($cadastros as $cadastro)
                 <tr>
                     <td>{{ $cadastro->nome }}</td>
                     <td>{{ $cadastro->quantidade }} Unidades</td>
@@ -36,6 +36,11 @@
             </tbody>
         </table>
         
+        <div class="">
+            {{ $cadastros->links() }}
+        </div>
+
+
     </div>
 
 

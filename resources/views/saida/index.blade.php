@@ -44,10 +44,11 @@
 
                     <td>
                         <form action="{{ route('saida.store', $produto->id) }}" method="POST">
+                            
                             @csrf
                             <input type="number" autofocus name="quantidade" id="quantidade" class="form-control form-control-sm" placeholder="Quantidade" value="{{ old('quantidade') }}">
 
-                            <button type='submit' class="btn btn-primary">Criar Saida</a>
+                            <button type='submit' class="btn btn-primary m-2">Criar Saida</a>
 
                         </form>                   
                     </td>

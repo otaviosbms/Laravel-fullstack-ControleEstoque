@@ -37,9 +37,11 @@
 
                         @foreach ($produto->entrada->reverse()->take(4) as $entrada)
 
-                            <p>{{ $entrada->quantidade ?? 'Quantidade não disponível' }} Unidades no dia {{ $entrada->created_at->format('d-m-Y') }}</p>
+                            <p>{{ $entrada->quantidade }} Unidades no dia {{ $entrada->created_at->format('d-m-Y') }}</p>
+                            
 
                         @endforeach
+
 
                     </td>
 
@@ -49,7 +51,7 @@
                             @csrf
                             <input type="number" autofocus name="quantidade" id="quantidade" class="form-control form-control-sm" placeholder="Quantidade" value="{{ old('quantidade') }}">
 
-                            <button type='submit' class="btn btn-primary">Criar Entrada</a>
+                            <button type='submit' class="btn btn-primary mt-2">Criar Entrada</a>
 
                         </form>   
                     </td>
@@ -60,6 +62,7 @@
             @endforeach
         </table>
 
+        {{-- {{ $produtos->links() }} --}}
 
     </div>
 

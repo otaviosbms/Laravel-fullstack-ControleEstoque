@@ -12,11 +12,11 @@ class EntradaController extends Controller
 
     public function index()
     {
-
         $produtos = Produto::with('entrada')->get();
-
+    
         return view('entrada.index', compact('produtos'));
     }
+    
 
     
     public function store(EntradaESaidaFormRequest $request, $id)
