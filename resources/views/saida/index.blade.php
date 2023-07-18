@@ -37,13 +37,9 @@
                     <td>{{ $produto->nome }}</td>
                     <td>R$ {{ $produto->valor }}</td>
                     <td>          
-                        @if (isset($saidas[$produto->id]) && $saidas[$produto->id]->isNotEmpty())          
-                        @foreach ($saidas[$produto->id]->reverse()->take(4) as $quantidade)
-                        <li>{{ $quantidade }} produtos </li>
+                        @foreach ($produto->saida->reverse()->take(4) as $saida)
+                        <p>{{ $saida->quantidade }} Unidades no dia {{ $saida->created_at->format('d-m-Y') }}</p>
                         @endforeach
-                        @else
-                        <p>Nenhuma entrada registrada para este produto.</p>
-                        @endif
                     </td>
 
                     <td>

@@ -11,8 +11,8 @@
         <p>Validade: {{ $cadastro->validade }}</p>
         <p>Valor: R${{ $cadastro->valor }}</p>
         <p>Descrição: {{ $cadastro->descricao }}</p>
-        <p>Data de cadastro: {{ $cadastro->created_at }}</p>
-        <p>Data de ultima atualização: {{ $cadastro->updated_at }}</p>
+        <p>Data de cadastro: {{ $cadastro->created_at->format('d-m-Y') }}</p>
+        <p>Data de ultima atualização: {{ $cadastro->updated_at->format('d-m-Y') }}</p>
 
         <a href="{{ route('cadastro.edit', $cadastro->id) }}" class="btn btn-primary">Editar Casdastro</a>
 
@@ -23,7 +23,6 @@
             @method('DELETE')
             <button type="submit" class="btn btn-danger">Excluir</button>
         </form>
-
 
     </div>
 

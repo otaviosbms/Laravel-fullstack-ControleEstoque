@@ -12,15 +12,10 @@ class SaidaController extends Controller
 {
     public function index()
     {
-        $produtos = Produto::all();
-        $saidas = [];
 
-        foreach ($produtos as $produto) {
-            $quantidades = $produto->saida()->pluck('quantidade');
-            $saidas[$produto->id] = $quantidades;
-        }
+        $produtos = Produto::with('saida')->get();
 
-        return view('saida.index', compact('produtos', 'saidas'));
+        return view('saida.index', compact('produtos'));
     }
 
     public function store(EntradaESaidaFormRequest $request, $id)

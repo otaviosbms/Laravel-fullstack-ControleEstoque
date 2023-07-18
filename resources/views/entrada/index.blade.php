@@ -18,7 +18,6 @@
 
 
 
-
         <table class="table">
             @foreach ($produtos as $produto)
             <thead>
@@ -34,14 +33,14 @@
                 <tr>
                     <td>{{ $produto->nome }}</td>
                     <td>R$ {{ $produto->valor }}</td>
-                    <td>          
-                        @if (isset($entradas[$produto->id]) && $entradas[$produto->id]->isNotEmpty())          
-                        @foreach ($entradas[$produto->id]->reverse()->take(4) as $quantidade)
-                        <li>{{ $quantidade }} produtos </li>
+                    <td>
+
+                        @foreach ($produto->entrada->reverse()->take(4) as $entrada)
+
+                            <p>{{ $entrada->quantidade ?? 'Quantidade não disponível' }} Unidades no dia {{ $entrada->created_at->format('d-m-Y') }}</p>
+
                         @endforeach
-                        @else
-                        <p>Nenhuma entrada registrada para este produto.</p>
-                        @endif
+
                     </td>
 
                     <td>
@@ -54,7 +53,7 @@
 
                         </form>   
                     </td>
-
+                    
                 </tr>
             
             </tbody>

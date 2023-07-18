@@ -9,6 +9,8 @@ class Entrada extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['quantidade', 'entrada_FkProdutoId'];
+
     public function produto()
     {
         return $this->belongsTo(Produto::class, 'entrada_FkProdutoId', 'id');
