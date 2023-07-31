@@ -36,9 +36,6 @@
             </tbody>
         </table>
         
-        <div class="">
-            {{ $cadastros->links() }}
-        </div>
 
 
     </div>
