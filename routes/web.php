@@ -23,6 +23,8 @@ use App\Http\Middleware\Autenticador;
         return redirect('/saldo');
     })->middleware(Autenticador::class);
 
+
+
     // Cadastro:
     Route::resource('cadastro', CadastroController::class);
 
@@ -38,6 +40,12 @@ use App\Http\Middleware\Autenticador;
     // Saldo:
     Route::get('saldo', [SaldoController::class,'index'])->name('saldo.index');
 
+
+
     // Login:
     Route::get('login', [LoginController::class, 'index'])->name('entrar');
     Route::post('login', [LoginController::class, 'login'])->name('login');
+
+    // Create User:
+    Route::get('register', [LoginController::class, 'create'])->name('criar');
+    Route::post('register', [LoginController::class, 'store'])->name('registrar');
