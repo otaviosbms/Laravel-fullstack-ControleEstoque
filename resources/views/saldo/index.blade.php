@@ -22,14 +22,14 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($cadastros as $cadastro)
+                @foreach ($cadastro as $cadastros)
                 <tr>
-                    <td>{{ $cadastro->nome }}</td>
-                    <td>{{ $cadastro->quantidade }} Unidades</td>
-                    <td>{{ $cadastro->validade }}</td>
-                    <td>R$ {{ $cadastro->valor }}</td>
+                    <td>{{ $cadastros->nome }}</td>
+                    <td>{{ $cadastros->quantidade }} Unidades</td>
+                    <td>{{ $cadastros->validade }}</td>
+                    <td>R$ {{ $cadastros->valor }}</td>
                     <td>
-                        <a href="{{ route('cadastro.show', $cadastro->id) }}" class="btn btn-primary">Detalhes</a>
+                        <a href="{{ route('cadastro.show', $cadastros->id) }}" class="btn btn-primary">Detalhes</a>
                     </td>
                 </tr>
                 @endforeach

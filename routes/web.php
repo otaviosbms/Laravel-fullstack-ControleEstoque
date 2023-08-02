@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\EntradaController;
 use App\Http\Controllers\SaidaController;
 use App\Http\Controllers\SaldoController;
+use App\Http\Middleware\Autenticador;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +18,10 @@ use App\Http\Controllers\SaldoController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+    Route::get('/',function(){
+        return redirect('/saldo');
+    })->middleware(Autenticador::class);
 
     // Cadastro:
     Route::resource('cadastro', CadastroController::class);
@@ -31,3 +37,7 @@ use App\Http\Controllers\SaldoController;
 
     // Saldo:
     Route::get('saldo', [SaldoController::class,'index'])->name('saldo.index');
+
+    // Login:
+    Route::get('login', [LoginController::class, 'index'])->name('entrar');
+    Route::post('login', [LoginController::class, 'login'])->name('login');

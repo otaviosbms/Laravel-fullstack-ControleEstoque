@@ -18,9 +18,6 @@
 
 
 
-
-
-
         <table class="table">
             @foreach ($produtos as $produto)
             <thead>

@@ -24,6 +24,9 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
+            <p class="nav-link">LAYOUT DE LOGIN</p>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{{ route('cadastro.index')}}">Cadastro</a>
           </li>
           <li class="nav-item">

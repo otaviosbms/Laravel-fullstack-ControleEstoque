@@ -9,8 +9,8 @@ class SaldoController extends Controller
 {
     public function index()
     {
-        $cadastros = Produto::query()->orderBy('nome');
+        $cadastro = Produto::query()->orderBy('nome')->get();
 
-        return view('saldo.index', compact('cadastros'));
+        return view('saldo.index', compact('cadastro'));
     }
 }
