@@ -29,11 +29,11 @@
                     <td>{{ $cadastro->validade }}</td>
                     <td>R$ {{ $cadastro->valor }}</td>
                     <td>
-                        <a href="{{ route('cadastro.edit', $cadastro->id) }}" class="btn btn-secondary">Editar</a>
+                        <a href="{{ route('cadastro.edit', $cadastro->id) }}" class="btn btn-secondary"><i class="bi bi-pencil-square"></i></a>
                         <form action="{{ route('cadastro.destroy', $cadastro->id) }}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Excluir</button>
+                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                         </form>
                     </td>
                 </tr>

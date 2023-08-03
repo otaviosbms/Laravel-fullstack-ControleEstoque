@@ -29,7 +29,7 @@
                     <td>{{ $cadastros->validade }}</td>
                     <td>R$ {{ $cadastros->valor }}</td>
                     <td>
-                        <a href="{{ route('cadastro.show', $cadastros->id) }}" class="btn btn-primary">Detalhes</a>
+                        <a href="{{ route('cadastro.show', $cadastros->id) }}" class="btn btn-info">Detalhes</a>
                     </td>
                 </tr>
                 @endforeach

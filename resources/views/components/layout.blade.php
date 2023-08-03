@@ -6,7 +6,9 @@
   <link rel="icon" src="#">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <title>{{ $title }}</title>
+
   @vite(['resources/js/app.js'])
+  
   <style>
     .custom-navbar {
       height: 100px; /* Defina a altura desejada */
@@ -38,7 +40,7 @@
         </ul>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/otaviosbms" target="_blank">Usuário</a>
+            <a class="navbar-brand" href="https://github.com/otaviosbms" target="_blank"><i class="bi bi-person-fill"></i></a>
           </li>
         </ul>
       </div>

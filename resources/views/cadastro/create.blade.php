@@ -42,8 +42,8 @@
                 <input type="text" name="descricao" id="descricao" class="form-control" value="{{ old('descricao') }}">
             </div>
 
-            <button type="submit" class="btn btn-primary">Salvar</button>
-            <a href="{{ route('cadastro.index') }}" class="btn btn-secondary">Cancelar</a>
+            <button type="submit" class="btn btn-primary"><i class="bi bi-check"></i></button>
+            <a href="{{ route('cadastro.index') }}" class="btn btn-secondary"><i class="bi bi-arrow-return-left"></i></a>
         </form>
 
 

@@ -41,7 +41,7 @@
         </ul>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/otaviosbms" target="_blank">Usuário</a>
+            <a class="navbar-brand" href="https://github.com/otaviosbms" target="_blank"><i class="bi bi-person-fill"></i></a>
           </li>
         </ul>
       </div>

@@ -17,14 +17,14 @@
 
             <div class="mt-5">
 
-                <a href="{{ route('cadastro.edit', $cadastro->id) }}" class="btn btn-primary">Editar Casdastro</a>
+                <a href="{{ route('cadastro.edit', $cadastro->id) }}" class="btn btn-primary"><i class="bi bi-pencil-square"></i></a>
 
-                <a href="{{ route('saldo.index') }}" class="btn btn-secondary">Voltar</a>
+                <a href="{{ route('saldo.index') }}" class="btn btn-secondary"><i class="bi bi-arrow-return-left"></i></a>
 
                 <form action="{{ route('cadastro.destroy', $cadastro->id) }}" method="POST" class="d-inline">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger">Excluir</button>
+                    <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                 </form>
 
             </div>
