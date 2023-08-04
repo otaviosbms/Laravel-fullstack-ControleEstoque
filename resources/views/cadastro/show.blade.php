@@ -1,10 +1,7 @@
 
-<x-layout title="Detalhes">
+<x-layout title="Detalhes" titulo="Detalhes do Produto">
 
-
-        <div class="container text-center">
-
-            <h1 class="mb-5">Detalhes do Produto</h1>
+    <div class="container text-center">
 
             <p>ID: {{ $cadastro->id }}</p>
             <p>Nome: {{ $cadastro->nome }}</p>
@@ -29,8 +26,7 @@
 
             </div>
 
-        </div>
-
+    </div>
 
 </x-layout>
 

@@ -1,8 +1,4 @@
-<x-layoutLogin title="Login">
-
-    <div class="container text-center">
-
-        <h1 class="mb-5">Login</h1>
+<x-layoutLogin title="Login" titulo="Login">
 
         @if ($errors->any())
         <div class="alert alert-danger">
@@ -38,6 +34,6 @@
 
         </form>
 
-    </div>
+
 
 </x-layout>

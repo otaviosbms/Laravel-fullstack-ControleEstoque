@@ -49,9 +49,39 @@
 
   <div class="container mt-5">
 
-    {{ $slot }}
+    <h1 class="mb-5 text-center">{{ $titulo }}</h1>
+
+    @if ($errors->any())
+    <div class="alert alert-danger text-center">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
+    @if(Session::has('mensagem'))
+    <div class="alert alert-success text-center">
+        {{ Session::get('mensagem') }}
+    </div>
+    @endif
+
+    <div class="corpo">
+      
+      {{ $slot }}
+
+    </div>
 
   </div>
+
+  <style>
+    .corpo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style> 
 
 
 </body>

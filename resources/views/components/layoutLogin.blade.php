@@ -50,10 +50,23 @@
 
   <div class="container mt-5">
 
-    {{ $slot }}
+    <h1 class="mb-5 text-center">{{ $titulo }}</h1>
+
+    <div class="corpo">
+      
+      {{ $slot }}
+
+    </div>
 
   </div>
 
+  <style>
+    .corpo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style> 
 
 </body>
 </html>

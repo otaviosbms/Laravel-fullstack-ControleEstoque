@@ -1,8 +1,5 @@
-<x-layoutLogin title="Novo usuário">
+<x-layoutLogin title="Novo usuário" titulo="Novo Usuário">
 
-    <div class="container text-center">
-
-        <h1 class="mb-5">Novo Usuário</h1>
 
         @if ($errors->any())
         <div class="alert alert-danger">
@@ -36,8 +33,11 @@
                 Registrar
             </button>
 
+            <a href="{{ route('entrar') }}" class="btn btn-secondary mt-3">
+                <i class="bi bi-arrow-return-left"></i>
+            </a>
+
         </form>
 
-    </div>
 
 </x-layout>

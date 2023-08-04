@@ -1,9 +1,6 @@
 
-<x-layout title="Criar">
+<x-layout title="Criar" titulo="Novo Produto">
 
-    <div class="container text-center">
-
-        <h1 class="mb-5">Novo Produto</h1>
 
         @if ($errors->any())
         <div class="alert alert-danger">
@@ -28,7 +25,7 @@
             </div> --}}
 
             <div class="mb-3">
-                <label for="validade" class="form-label">Validade:<br>(Não obrigatório)</label>
+                <label for="validade" class="form-label">Validade: (Não obrigatório)</label>
                 <input type="date" name="validade" id="validade" class="form-control" value="{{ old('validade') }}">
             </div>
 
@@ -38,7 +35,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="validade" class="form-label">Descrição:<br>(Não obrigatório)</label>
+                <label for="validade" class="form-label">Descrição: (Não obrigatório)</label>
                 <input type="text" name="descricao" id="descricao" class="form-control" value="{{ old('descricao') }}">
             </div>
 
@@ -47,6 +44,5 @@
         </form>
 
 
-    </div>
 
 </x-layout>

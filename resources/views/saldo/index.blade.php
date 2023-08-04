@@ -1,8 +1,7 @@
-<x-layout title="Saldo">
+<x-layout title="Saldo" titulo="Saldo Atual">
 
 
-    <div class="container text-center">
-        <h1 class="mb-5">Saldo Atual</h1>
+
 
         @if(Session::has('mensagem'))
         <div class="alert alert-success">
@@ -10,6 +9,7 @@
         </div>
         @endif
 
+        <div class="container text-center">
 
         <table class="table">
             <thead>
@@ -36,8 +36,6 @@
             </tbody>
         </table>
         
-
-
     </div>
 
 

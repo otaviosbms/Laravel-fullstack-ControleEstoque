@@ -1,16 +1,11 @@
-<x-layout title="Cadastro">
+<x-layout title="Cadastro" titulo="Cadastro de Produtos">
 
 
-    <div class="container text-center">
-        <h1 class="mb-3">Cadastro de Produtos</h1>
+        <div class="container text-center">
 
-        @if(Session::has('mensagem'))
-        <div class="alert alert-success">
-            {{ Session::get('mensagem') }}
-        </div>
-        @endif
 
         <a href="{{ route('cadastro.create') }}" class="btn btn-primary mb-5">Novo Produto</a>
+
         <table class="table">
             <thead>
                 <tr>
@@ -40,10 +35,8 @@
                 @endforeach
             </tbody>
         </table>
-        
+
     </div>
-
-
 
 </x-layout>
 

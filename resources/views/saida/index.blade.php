@@ -1,21 +1,7 @@
-<x-layout title="Saida">
+<x-layout title="Saida" titulo="Saidas de Produtos">
+
 
     <div class="container text-center">
-
-        <h1 class="mb-5">Saidas de Produtos</h1>
-        
-
-
-        @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
-
 
 
         <table class="table">
@@ -45,7 +31,7 @@
                             @csrf
                             <input type="number" autofocus name="quantidade" id="quantidade" class="form-control form-control-sm" placeholder="Quantidade" value="{{ old('quantidade') }}">
 
-                            <button type='submit' class="btn btn-primary m-2">Criar Saida</a>
+                            <button type='submit' class="btn btn-primary mt-2">Criar Saida</a>
 
                         </form>                   
                     </td>
@@ -55,7 +41,6 @@
             </tbody>
             @endforeach
         </table>
-
 
     </div>
 
