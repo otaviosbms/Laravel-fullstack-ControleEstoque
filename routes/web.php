@@ -29,13 +29,13 @@ use App\Http\Middleware\Autenticador;
     Route::resource('cadastro', CadastroController::class);
 
     // Entradas:
-    Route::get('entrada', [EntradaController::class,'index'])->name('entrada.index');
-    Route::post('entrada/{id}/store', [EntradaController::class, 'store'])->name('entrada.store');
-    Route::get('entrada/{id}/show', [EntradaController::class, 'show'])->name('entrada.show');
+    Route::get('entrada', [EntradaController::class,'index'])->name('entrada.index')->middleware(Autenticador::class);
+    Route::post('entrada/{id}/store', [EntradaController::class, 'store'])->name('entrada.store')->middleware(Autenticador::class);
+    // Route::get('entrada/{id}/show', [EntradaController::class, 'show'])->name('entrada.show')->middleware(Autenticador::class);
 
     // Saidas:
-    Route::get('saida', [SaidaController::class,'index'])->name('saida.index');
-    Route::post('saida/{id}/store', [SaidaController::class, 'store'])->name('saida.store');
+    Route::get('saida', [SaidaController::class,'index'])->name('saida.index')->middleware(Autenticador::class);
+    Route::post('saida/{id}/store', [SaidaController::class, 'store'])->name('saida.store')->middleware(Autenticador::class);
 
     // Saldo:
     Route::get('saldo', [SaldoController::class,'index'])->name('saldo.index');
@@ -43,9 +43,11 @@ use App\Http\Middleware\Autenticador;
 
 
     // Login:
-    Route::get('login', [LoginController::class, 'index'])->name('entrar');
-    Route::post('login', [LoginController::class, 'login'])->name('login');
+    Route::get('entrar', [LoginController::class, 'index'])->name('entrar');
+    Route::post('entrar', [LoginController::class, 'login'])->name('login');
+
+    Route::get('sair', [LoginController::class, 'logout'])->name('logout');
 
     // Create User:
-    Route::get('register', [LoginController::class, 'create'])->name('criar');
-    Route::post('register', [LoginController::class, 'store'])->name('registrar');
+    Route::get('registro', [LoginController::class, 'create'])->name('criar');
+    Route::post('registro', [LoginController::class, 'store'])->name('registrar');

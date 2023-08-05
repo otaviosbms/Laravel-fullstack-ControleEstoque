@@ -1,7 +1,7 @@
 
 <x-layout title="Detalhes" titulo="Detalhes do Produto">
 
-    <div class="container text-center">
+    <div class="">
 
             <p>ID: {{ $cadastro->id }}</p>
             <p>Nome: {{ $cadastro->nome }}</p>
@@ -14,15 +14,19 @@
 
             <div class="mt-5">
 
+                @auth
                 <a href="{{ route('cadastro.edit', $cadastro->id) }}" class="btn btn-primary"><i class="bi bi-pencil-square"></i></a>
+                @endauth
 
                 <a href="{{ route('saldo.index') }}" class="btn btn-secondary"><i class="bi bi-arrow-return-left"></i></a>
 
+                @auth
                 <form action="{{ route('cadastro.destroy', $cadastro->id) }}" method="POST" class="d-inline">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                 </form>
+                @endauth
 
             </div>
 

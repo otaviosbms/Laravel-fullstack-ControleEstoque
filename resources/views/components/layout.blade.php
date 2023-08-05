@@ -24,24 +24,49 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
+
+        
         <ul class="navbar-nav mx-auto">
+
+          @auth
           <li class="nav-item">
             <a class="nav-link" href="{{ route('cadastro.index')}}">Cadastro</a>
           </li>
+          @endauth
+
           <li class="nav-item">
             <a class="nav-link" href="{{ route('saldo.index') }}">Saldo</a>
           </li>
+        
+          @auth
           <li class="nav-item">
             <a class="nav-link" href="{{ route('entrada.index') }}">Entradas</a>
           </li>
+          @endauth
+
+          @auth
           <li class="nav-item">
             <a class="nav-link" href="{{ route('saida.index') }}">Saídas</a>
           </li>
+          @endauth
+
         </ul>
+        
+
         <ul class="navbar-nav">
+
+          @guest
           <li class="nav-item">
-            <a class="navbar-brand" href="https://github.com/otaviosbms" target="_blank"><i class="bi bi-person-fill"></i></a>
+            <a class="navbar-brand" href="{{ route('login') }}"><i class="bi bi-box-arrow-in-right"></i></a>
           </li>
+          @endguest
+
+          @auth
+          <li class="nav-item">
+            <a class="navbar-brand" href="{{ route('logout') }}"><i class="bi bi-box-arrow-right"></i></a>
+          </li>
+          @endauth
+
         </ul>
       </div>
     </div>

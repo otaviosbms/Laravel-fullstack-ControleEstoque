@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
-use PHPUnit\Framework\MockObject\ReturnValueNotConfiguredException;
+use App\Http\Requests\LoginFormRequest;
 
 class LoginController extends Controller
 {
@@ -30,6 +30,15 @@ class LoginController extends Controller
         
     }
 
+    public function logout()
+    {
+        
+        Auth::logout();
+
+        return to_route('login');
+
+    }
+
     // Users Creation:
 
     public function create()
@@ -37,7 +46,7 @@ class LoginController extends Controller
         return view('login.create');
     }
 
-    public function store(Request $request)
+    public function store(LoginFormRequest $request)
     {
        $data = $request->except(['_token']);
 

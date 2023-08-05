@@ -1,15 +1,4 @@
-<x-layoutLogin title="Novo usuário" titulo="Novo Usuário">
-
-
-        @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
+<x-layout title="Novo usuário" titulo="Criar novo Usuário">
 
         <form method="post">
             @csrf
