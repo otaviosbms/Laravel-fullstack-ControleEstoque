@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Middleware\Autenticador;
 use App\Http\Requests\ProdutoFormRequest;
+use App\Mail\CadastroProduto;
 use App\Models\Produto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 
 class CadastroController extends Controller
@@ -48,6 +51,15 @@ class CadastroController extends Controller
         }
 
         $cadastro->save();
+
+        $email = new CadastroProduto(
+            $cadastro->nome,
+            $cadastro->id,
+            $cadastro->valor,
+            $cadastro->descricao
+        );
+
+        Mail::to(Auth::user())->send($email);
 
         return redirect()->route('cadastro.index');
     }

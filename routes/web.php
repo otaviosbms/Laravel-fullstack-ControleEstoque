@@ -51,3 +51,9 @@ use App\Http\Middleware\Autenticador;
     // Create User:
     Route::get('registro', [LoginController::class, 'create'])->name('criar');
     Route::post('registro', [LoginController::class, 'store'])->name('registrar');
+
+
+
+    Route::get('/email', function () {
+        return new \App\Mail\CadastroProduto('teste',1,1,'fala fi');
+    });
