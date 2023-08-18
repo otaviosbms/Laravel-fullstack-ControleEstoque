@@ -1,10 +1,14 @@
 <x-mail::message>
 # Produto {{ $nomeProduto }} foi cadastrado.
  
-O produto {{ $nomeProduto }} de id {{ $idProduto }} e valor {{ $valorProduto }} foi cadastrado.
+informações:
 
-descrição do produto: {{ $descricaoProduto }}
- 
+- ID: {{ $idProduto }} 
+- Valor: {{ $valorProduto }}
+- descrição: {{ $descricaoProduto }}
+
+- Data e horário de cadastro: {{ $dataDeCadastro }}
+
 Acesse aqui:
 <x-mail::button :url="route('cadastro.show', $idProduto)">
 Ver produto

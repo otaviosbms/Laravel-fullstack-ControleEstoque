@@ -21,7 +21,8 @@ class CadastroProduto extends Mailable
         public string $nomeProduto,
         public int $idProduto,
         public int $valorProduto,
-        public string $descricaoProduto
+        public string $descricaoProduto,
+        public string $dataDeCadastro
 
     )
     {

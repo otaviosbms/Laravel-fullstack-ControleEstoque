@@ -53,13 +53,14 @@ class CadastroController extends Controller
         $cadastro->save();
 
         $email = new CadastroProduto(
-            $cadastro->nome,
-            $cadastro->id,
-            $cadastro->valor,
-            $cadastro->descricao
-        );
+             $cadastro->nome,
+             $cadastro->id,
+             $cadastro->valor,
+             $cadastro->descricao,
+             $cadastro->created_at,
+         );
 
-        Mail::to(Auth::user())->send($email);
+         Mail::to(Auth::user())->send($email);
 
         return redirect()->route('cadastro.index');
     }
