@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\EmailUsuario;
 use App\Http\Middleware\Autenticador;
 use App\Http\Requests\ProdutoFormRequest;
 use App\Mail\CadastroProduto;
@@ -51,6 +52,17 @@ class CadastroController extends Controller
         }
 
         $cadastro->save();
+
+        EmailUsuario::dispatch(
+
+            $cadastro->nome,
+            $cadastro->id,
+            $cadastro->valor,
+            $cadastro->descricao,
+            $cadastro->created_at,
+
+        );
+
 
         return redirect()->route('cadastro.index');
     }

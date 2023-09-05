@@ -2,7 +2,7 @@
 
 namespace App\Listeners;
 
-
+use App\Events\EmailUsuario;
 use App\Mail\CadastroProduto;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -21,7 +21,7 @@ class EmailUsuarioSobreCadastroProduto
     /**
      * Handle the event.
      */
-    public function handle(object $event): void
+    public function handle( EmailUsuario $event): void
     {
         $email = new CadastroProduto(
             $event->produtoNome,

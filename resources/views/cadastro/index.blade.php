@@ -6,7 +6,7 @@
 
         <a href="{{ route('cadastro.create') }}" class="btn btn-primary mb-5">Novo Produto</a>
 
-        <table class="table">
+        <table class="table mb-5">
             <thead>
                 <tr>
                     <th>Nome:</th>

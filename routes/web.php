@@ -54,6 +54,6 @@ use App\Http\Middleware\Autenticador;
 
 
 
-    // Route::get('/email', function () {
-    //     return new \App\Mail\CadastroProduto('teste',1,1,'fala fi');
-    // });
+    Route::get('/email', function () {
+         return new \App\Mail\CadastroProduto('teste',1,1,'teste','teste');
+    });

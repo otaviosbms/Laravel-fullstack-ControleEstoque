@@ -3,7 +3,8 @@
  
 informações:
 
-- ID: {{ $idProduto }} 
+- ID: {{ $idProduto }}
+- Nome: {{ $nomeProduto }}
 - Valor: {{ $valorProduto }}
 - descrição: {{ $descricaoProduto }}
 

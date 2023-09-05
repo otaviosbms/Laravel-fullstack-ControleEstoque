@@ -3,10 +3,11 @@
 
     <div class="container text-center">
 
-        <table class="table">
+        <table class="table mb-5">
             @foreach ($produtos as $produto)
             <thead>
                 <tr>
+                    <th>ID:</th>
                     <th>Nome:</th>
                     <th>Valor:</th>
                     <th>Utimas Entradas:<br>(valores e data de entrada)</th>
@@ -16,6 +17,7 @@
             <tbody>
                 
                 <tr>
+                    <td>{{ $produto->id }}</td>
                     <td>{{ $produto->nome }}</td>
                     <td>R$ {{ $produto->valor }}</td>
                     <td>

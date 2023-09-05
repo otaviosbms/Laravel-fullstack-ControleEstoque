@@ -11,9 +11,10 @@
 
         <div class="container text-center">
 
-        <table class="table">
+        <table class="table mb-5">
             <thead>
                 <tr>
+                    <th>ID:</th>
                     <th>Nome:</th>
                     <th>Quantidade:</th>
                     <th>Validade:</th>
@@ -24,6 +25,7 @@
             <tbody>
                 @foreach ($cadastro as $cadastros)
                 <tr>
+                    <td>{{ $cadastros->id }}</td>
                     <td>{{ $cadastros->nome }}</td>
                     <td>{{ $cadastros->quantidade }} Unidades</td>
                     <td>{{ $cadastros->validade }}</td>
