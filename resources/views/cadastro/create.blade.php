@@ -2,17 +2,7 @@
 <x-layout title="Criar" titulo="Novo Produto">
 
 
-        @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
-
-        <form action="{{ route('cadastro.store') }}" method="POST">
+        <form action="{{ route('cadastro.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="nome" class="form-label">Nome:</label>
@@ -32,6 +22,11 @@
             <div class="mb-3">
                 <label for="validade" class="form-label">Descrição: (Não obrigatório)</label>
                 <input type="text" name="descricao" id="descricao" class="form-control" value="{{ old('descricao') }}">
+            </div>
+
+            <div class="mb-3">
+                <label for="capa" class="form-label">Capa</label>
+                <input type="file" id="capa" name="capa" class="form-control" accept="image/gif, image/jpeg, image/png">
             </div>
 
             <button type="submit" class="btn btn-primary"><i class="bi bi-check"></i></button>
