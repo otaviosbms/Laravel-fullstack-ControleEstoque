@@ -3,6 +3,12 @@
 
     <div class="">
 
+
+            <img src="{{ asset('storage/' . $cadastro->capa) }}" 
+            style="height: 250px"
+            alt="Imagem do produto" 
+            class="img-fluid mb-4">
+
             <p>ID: {{ $cadastro->id }}</p>
             <p>Nome: {{ $cadastro->nome }}</p>
             <p>Quantidade: {{ $cadastro->quantidade }} Unidades</p>
@@ -12,7 +18,7 @@
             <p>Data de cadastro: {{ $cadastro->created_at->format('d-m-Y') }}</p>
             <p>Data de ultima atualização: {{ $cadastro->updated_at->format('d-m-Y') }}</p>
 
-            <div class="mt-5">
+            <div class="">
 
                 @auth
                 <a href="{{ route('cadastro.edit', $cadastro->id) }}" class="btn btn-primary"><i class="bi bi-pencil-square"></i></a>

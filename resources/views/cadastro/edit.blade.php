@@ -2,11 +2,6 @@
 
 
 
-
-
-
-    
-
         <form action="{{ route('cadastro.update', $cadastro->id) }}" method="POST">
             @csrf
             @method('PUT')
@@ -15,11 +10,6 @@
                 <label for="nome" class="form-label">Nome:</label>
                 <input type="text" autofocus name="nome" id="nome" class="form-control" value="{{ $cadastro->nome }}">
             </div>
-
-            {{-- <div class="mb-3">
-                <label for="quantidade" class="form-label">Quantidade:</label>
-                <input type="number" name="quantidade" id="quantidade" class="form-control" value="{{ $cadastro->quantidade }}">
-            </div> --}}
 
             <div class="mb-3">
                 <label for="validade" class="form-label">Validade: (Não obrigatório)</label>

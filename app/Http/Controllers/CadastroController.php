@@ -36,9 +36,15 @@ class CadastroController extends Controller
 
     public function store(ProdutoFormRequest $request)
     {
+
+        // notificação
+
         Session::flash('mensagem', 'Item adicionado com sucesso');
 
+        // criação do produto
+
         $cadastro = new Produto();
+
         $cadastro->nome = $request->input('nome');
 
         if ($request->filled('validade')) {
@@ -47,11 +53,25 @@ class CadastroController extends Controller
 
         $cadastro->valor = $request->input('valor');
 
-        if ($request->filled('descricao')) {
+        if ($request->input('descricao') == null) {
+            $cadastro->descricao = "Sem descrição fornecida";
+        }else{
             $cadastro->descricao = $request->input('descricao');
         }
 
+        if ($request->hasFile('capa')){
+            $caminhoCapa = $request->file('capa')->store('produtos_capa','public');
+
+            $cadastro->capa = $caminhoCapa;
+        }else{
+            $produtoSemCapa = null;
+            $cadastro->capa = $produtoSemCapa;
+        }
+
+
         $cadastro->save();
+
+        // envio de email de notificação do cadastro
 
         EmailUsuario::dispatch(
 
@@ -62,7 +82,6 @@ class CadastroController extends Controller
             $cadastro->created_at,
 
         );
-
 
         return redirect()->route('cadastro.index');
     }
@@ -87,7 +106,6 @@ class CadastroController extends Controller
 
         $cadastro = Produto::find($id);
         $cadastro->nome = $request->input('nome');
-        // $cadastro->quantidade = $request->input('quantidade');
         $cadastro->validade = $request->input('validade');
         $cadastro->valor = $request->input('valor');
         $cadastro->descricao = $request->input('descricao');
@@ -100,6 +118,7 @@ class CadastroController extends Controller
     {
         $cadastro = Produto::find($id);
         $cadastro->delete();
+
 
         // Armazene a mensagem de notificação na sessão
         Session::flash('mensagem', 'Item excluído com sucesso');

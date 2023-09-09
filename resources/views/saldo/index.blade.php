@@ -15,6 +15,7 @@
             <thead>
                 <tr>
                     <th>ID:</th>
+                    <th>Capa:</th>
                     <th>Nome:</th>
                     <th>Quantidade:</th>
                     <th>Validade:</th>
@@ -26,6 +27,7 @@
                 @foreach ($cadastro as $cadastros)
                 <tr>
                     <td>{{ $cadastros->id }}</td>
+                    <td><img src="{{ asset('storage/' . $cadastros->capa) }}" width="80" class="img-thumbnail" alt="Imagem do produto"></td>
                     <td>{{ $cadastros->nome }}</td>
                     <td>{{ $cadastros->quantidade }} Unidades</td>
                     <td>{{ $cadastros->validade }}</td>

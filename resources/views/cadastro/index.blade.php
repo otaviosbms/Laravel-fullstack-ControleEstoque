@@ -9,8 +9,9 @@
         <table class="table mb-5">
             <thead>
                 <tr>
+                    <th>ID:</th>
+                    <th>Capa:</th>
                     <th>Nome:</th>
-                    {{-- <th>Quantidade:</th> --}}
                     <th>Validade:</th>
                     <th>Valor:</th>
                     <th>Ações:</th>
@@ -19,8 +20,10 @@
             <tbody>
                 @foreach ($cadastro as $cadastro)
                 <tr>
+
+                    <td>{{ $cadastro->id }}</td>
+                    <td><img src="{{ asset('storage/' . $cadastro->capa) }}" width="80" class="img-thumbnail" alt="Imagem do produto"></td>
                     <td>{{ $cadastro->nome }}</td>
-                    {{-- <td>{{ $cadastro->quantidade }} Unidades</td> --}}
                     <td>{{ $cadastro->validade }}</td>
                     <td>R$ {{ $cadastro->valor }}</td>
                     <td>
@@ -31,6 +34,7 @@
                             <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                         </form>
                     </td>
+
                 </tr>
                 @endforeach
             </tbody>

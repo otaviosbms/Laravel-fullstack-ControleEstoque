@@ -8,6 +8,7 @@
             <thead>
                 <tr>
                     <th>ID:</th>
+                    <th>Capa:</th>
                     <th>Nome:</th>
                     <th>Valor:</th>
                     <th>Utimas Entradas:<br>(valores e data de entrada)</th>
@@ -18,6 +19,7 @@
                 
                 <tr>
                     <td>{{ $produto->id }}</td>
+                    <td><img src="{{ asset('storage/' . $produto->capa) }}" width="80" class="img-thumbnail" alt="Imagem do produto"></td>
                     <td>{{ $produto->nome }}</td>
                     <td>R$ {{ $produto->valor }}</td>
                     <td>
