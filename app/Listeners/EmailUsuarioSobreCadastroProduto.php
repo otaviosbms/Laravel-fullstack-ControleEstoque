@@ -31,6 +31,6 @@ class EmailUsuarioSobreCadastroProduto
             $event->produtoCreated_at,
         );
 
-       Mail::to(Auth::user())->send($email);
+       Mail::to(Auth::user())->queue($email);
     }
 }

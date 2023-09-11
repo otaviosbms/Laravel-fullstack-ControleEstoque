@@ -35,9 +35,9 @@ class EntradaController extends Controller
 
     public function show($id)
     {
-
+        $produtos = Produto::find($id);
+        return view('entrada.show', compact('produtos'));
         
-
     }
 
 };

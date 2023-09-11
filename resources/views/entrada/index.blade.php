@@ -24,7 +24,7 @@
                     <td>R$ {{ $produto->valor }}</td>
                     <td>
 
-                        @foreach ($produto->entrada->reverse()->take(4) as $entrada)
+                        @foreach ($produto->entrada->reverse()->take(3) as $entrada)
 
                             <p>{{ $entrada->quantidade }} Unidades no dia {{ $entrada->created_at->format('d-m-Y') }}</p>
                             
@@ -35,16 +35,22 @@
                     </td>
 
                     <td>
+
                         <form action="{{ route('entrada.store', $produto->id) }}" method="POST">
 
                             @csrf
                             <input type="number" autofocus name="quantidade" id="quantidade" class="form-control form-control-sm" placeholder="Quantidade" value="{{ old('quantidade') }}">
 
-                            <button type='submit' class="btn btn-primary mt-2">Criar Entrada</a>
+                            <button type='submit' class="btn btn-primary mt-2">Criar Entrada</a></button>
+
+                            <a href="{{ route('entrada.show', $produto->id) }}" class="btn btn-secondary mt-2">Historico</a>
 
                         </form>
-                        
+
+
                     </td>
+
+                    
                     
                 </tr>
             

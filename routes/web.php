@@ -31,15 +31,15 @@ use App\Http\Middleware\Autenticador;
     // Entradas:
     Route::get('entrada', [EntradaController::class,'index'])->name('entrada.index')->middleware(Autenticador::class);
     Route::post('entrada/{id}/store', [EntradaController::class, 'store'])->name('entrada.store')->middleware(Autenticador::class);
-    // Route::get('entrada/{id}/show', [EntradaController::class, 'show'])->name('entrada.show')->middleware(Autenticador::class);
+    Route::get('entrada/{id}/show', [EntradaController::class, 'show'])->name('entrada.show')->middleware(Autenticador::class);
 
     // Saidas:
     Route::get('saida', [SaidaController::class,'index'])->name('saida.index')->middleware(Autenticador::class);
     Route::post('saida/{id}/store', [SaidaController::class, 'store'])->name('saida.store')->middleware(Autenticador::class);
+    Route::get('saida/{id}/show', [SaidaController::class, 'show'])->name('saida.show')->middleware(Autenticador::class);
 
     // Saldo:
     Route::get('saldo', [SaldoController::class,'index'])->name('saldo.index');
-
 
 
     // Login:

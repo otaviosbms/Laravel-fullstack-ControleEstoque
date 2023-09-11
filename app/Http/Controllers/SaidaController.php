@@ -37,5 +37,11 @@ class SaidaController extends Controller
         return redirect()->route('saida.index');
     }
 
+    public function show($id)
+    {
+        $produtos = Produto::find($id);
+        return view('saida.show', compact('produtos'));
+        
+    }
 
 }

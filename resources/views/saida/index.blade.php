@@ -35,7 +35,9 @@
                             @csrf
                             <input type="number" autofocus name="quantidade" id="quantidade" class="form-control form-control-sm" placeholder="Quantidade" value="{{ old('quantidade') }}">
 
-                            <button type='submit' class="btn btn-primary mt-2">Criar Saida</a>
+                            <button type='submit' class="btn btn-primary mt-2">Criar Saida</a></button>
+
+                            <a href="{{ route('saida.show', $produto->id) }}" class="btn btn-secondary mt-2">Historico</a>
 
                         </form>                   
                     </td>
