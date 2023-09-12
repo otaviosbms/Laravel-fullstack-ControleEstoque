@@ -26,7 +26,7 @@
 
                         @foreach ($produto->entrada->reverse()->take(3) as $entrada)
 
-                            <p>{{ $entrada->quantidade }} Unidades no dia {{ $entrada->created_at->format('d-m-Y') }}</p>
+                            <p>{{ $entrada->quantidade }} Unidades na data {{ $entrada->created_at->format('d/m/Y H:i:s') }}</p>
                             
 
                         @endforeach
@@ -36,7 +36,7 @@
 
                     <td>
 
-                        <form action="{{ route('entrada.store', $produto->id) }}" method="POST">
+                        <form action="{{ route('entrada.store', $produto->id) }}" method="POST" class="mt-3">
 
                             @csrf
                             <input type="number" autofocus name="quantidade" id="quantidade" class="form-control form-control-sm" placeholder="Quantidade" value="{{ old('quantidade') }}">

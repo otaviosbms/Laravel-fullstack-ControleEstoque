@@ -1,14 +1,32 @@
 
-<x-layout title="Detalhes" titulo="Total de saidas do produto {{ $produtos->nome }}">
+<x-layout title="Detalhes" titulo="Historico de saidas de {{ $produtos->nome }}">
 
     <div class="">
 
-        
-        @foreach ($produtos->saida->reverse() as $saida)
 
-        <p>{{ $saida->quantidade }} Unidades no dia {{ $saida->created_at->format('d-m-Y') }}</p>
 
-        @endforeach
+        <table class="table mb-5">
+            <thead>
+                <tr>
+                    <th>Quantidade</th>
+                    <th>Data e Hora</th>
+                </tr>    
+            </thead>
+            <tbody>
+                
+                @foreach ($produtos->saida->reverse() as $saida)
+
+                <tr>
+                    <td>{{ $saida->quantidade }}</td>
+                    <td>{{ $saida->created_at->format('d/m/Y H:i:s') }}</td>
+                </tr>
+                
+                @endforeach
+
+            </tbody>
+            
+        </table>
+
 
 
     </div>
