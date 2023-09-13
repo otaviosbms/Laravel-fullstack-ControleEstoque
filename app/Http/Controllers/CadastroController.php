@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 
 class CadastroController extends Controller
 {
@@ -68,7 +69,6 @@ class CadastroController extends Controller
             $cadastro->capa = $produtoSemCapa;
         }
 
-
         $cadastro->save();
 
         // envio de email de notificação do cadastro
@@ -109,20 +109,40 @@ class CadastroController extends Controller
         $cadastro->validade = $request->input('validade');
         $cadastro->valor = $request->input('valor');
         $cadastro->descricao = $request->input('descricao');
+
+        if ($request->hasFile('capa')){
+
+            $capa = $cadastro->capa;
+
+            if ($capa){
+                Storage::disk('public')->delete($capa);
+            }
+
+            $caminhoCapa = $request->file('capa')->store('produtos_capa','public');
+            $cadastro->capa = $caminhoCapa;
+        }
+
+
         $cadastro->save();
+
 
         return redirect()->route('cadastro.index');
     }
 
     public function destroy($id)
     {
-        $cadastro = Produto::find($id);
-        $cadastro->delete();
+        //encontra o produto pelo id e apaga a sua capa do armazenamento local e por fim o produto.
 
+        $cadastro = Produto::find($id);
+
+        $capa = $cadastro->capa;
+
+        Storage::disk('public')->delete($capa);
+
+        $cadastro->delete();
 
         // Armazene a mensagem de notificação na sessão
         Session::flash('mensagem', 'Item excluído com sucesso');
-
 
         return redirect()->route('cadastro.index');
     }

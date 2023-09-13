@@ -48,7 +48,7 @@ class LoginController extends Controller
 
     public function store(LoginFormRequest $request)
     {
-       $data = $request->except(['_token']);
+        $data = $request->except(['_token']);
 
         $data['password'] = Hash::make($data['password']);
 

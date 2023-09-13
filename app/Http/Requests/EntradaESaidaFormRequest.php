@@ -22,7 +22,7 @@ class EntradaESaidaFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'quantidade' => ['required']
+            'quantidade' => ['required', 'min_digits:1']
         ];
     }
 
@@ -30,6 +30,7 @@ class EntradaESaidaFormRequest extends FormRequest
     {
         return [
             'quantidade.required' => 'O campo quantidade é obrigatório',
+            'quantidade.min_digits' => 'Digite um valor inteiro',
         ];
     }
 

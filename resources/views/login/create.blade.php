@@ -18,6 +18,11 @@
                 <input type="password" name="password" id="password" class="form-control"> 
             </div>
 
+            {{-- <div class="form-group">
+                <label for="passwordVerify" class="form-label">Digite a senha novamente</label>
+                <input type="passwordVerify" name="passwordVerify" id="passwordVerify" class="form-control"> 
+            </div> --}}
+
             <button class="btn btn-primary mt-3">
                 Registrar
             </button>

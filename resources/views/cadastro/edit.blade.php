@@ -2,7 +2,7 @@
 
 
 
-        <form action="{{ route('cadastro.update', $cadastro->id) }}" method="POST">
+        <form action="{{ route('cadastro.update', $cadastro->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -22,8 +22,13 @@
             </div>
 
             <div class="mb-3">
-                <label for="valor" class="form-label">Descrição: (Não obrigatório)</label>
+                <label for="descricao" class="form-label">Descrição: (Não obrigatório)</label>
                 <input type="text" name="descricao" id="descricao" class="form-control" value="{{ $cadastro->descricao }}">
+            </div>
+
+            <div class="mb-3">
+                <label for="capa" class="form-label">Capa: (Não obrigatório)</label>
+                <input type="file" id="capa" name="capa" class="form-control" accept="image/gif, image/jpeg, image/png">
             </div>
 
             <button type="submit" class="btn btn-primary"><i class="bi bi-check-lg"></i></button>

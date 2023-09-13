@@ -25,7 +25,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="capa" class="form-label">Capa</label>
+                <label for="capa" class="form-label">Capa: (Não obrigatório)</label>
                 <input type="file" id="capa" name="capa" class="form-control" accept="image/gif, image/jpeg, image/png">
             </div>
 
