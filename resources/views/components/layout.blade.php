@@ -34,10 +34,12 @@
           </li>
           @endauth
 
+          @auth
           <li class="nav-item">
             <a class="nav-link" href="{{ route('saldo.index') }}">Saldo</a>
           </li>
-        
+          @endauth
+
           @auth
           <li class="nav-item">
             <a class="nav-link" href="{{ route('entrada.index') }}">Entradas</a>

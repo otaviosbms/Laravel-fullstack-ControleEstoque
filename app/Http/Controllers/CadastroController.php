@@ -108,8 +108,15 @@ class CadastroController extends Controller
         $cadastro->nome = $request->input('nome');
         $cadastro->validade = $request->input('validade');
         $cadastro->valor = $request->input('valor');
-        $cadastro->descricao = $request->input('descricao');
 
+
+        if ($request->input('descricao') == null) {
+            $cadastro->descricao = "Sem descrição fornecida";
+        }else{
+            $cadastro->descricao = $request->input('descricao');
+        }
+
+        
         if ($request->hasFile('capa')){
 
             $capa = $cadastro->capa;
