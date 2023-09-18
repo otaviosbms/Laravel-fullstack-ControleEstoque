@@ -144,7 +144,9 @@ class CadastroController extends Controller
 
         $capa = $cadastro->capa;
 
-        Storage::disk('public')->delete($capa);
+        if ($capa){
+            Storage::disk('public')->delete($capa);
+        }
 
         $cadastro->delete();
 
