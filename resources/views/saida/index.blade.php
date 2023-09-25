@@ -24,7 +24,7 @@
                     <td>{{ $produto->nome }}</td>
                     <td>R$ {{ $produto->valor }}</td>
                     <td>          
-                        @foreach ($produto->saida->reverse()->take(4) as $saida)
+                        @foreach ($produto->saida->reverse()->take(3) as $saida)
                         <p>{{ $saida->quantidade }} Unidades na data {{ $saida->created_at->format('d/m/Y H:i:s') }}</p>
                         @endforeach
                     </td>
