@@ -1,6 +1,5 @@
 <x-layout title="Saida" titulo="Saidas de Produtos">
 
-
     <div class="container text-center">
 
 
