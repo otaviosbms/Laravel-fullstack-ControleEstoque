@@ -69,6 +69,8 @@ class CadastroController extends Controller
             $cadastro->capa = $produtoSemCapa;
         }
 
+
+
         $cadastro->save();
 
         // envio de email de notificação do cadastro

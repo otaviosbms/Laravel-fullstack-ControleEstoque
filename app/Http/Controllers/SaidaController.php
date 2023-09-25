@@ -28,7 +28,6 @@ class SaidaController extends Controller
         $saida->save();
 
 
-
         $estoque = Produto::find($id);
         $estoque->quantidade -= $request->input('quantidade');
         $estoque->save();
